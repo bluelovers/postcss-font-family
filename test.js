@@ -39,6 +39,10 @@ var tests = [{
     fixture: 'h1{font:italic small-caps normal 13px/150% "Helvetica Neue", sans-serif}',
     expected: 'h1{font:italic small-caps normal 13px/150% Helvetica Neue,sans-serif}'
 }, {
+    message: 'should convert shorthand with zero unit line height',
+    fixture: 'h1{font:italic small-caps normal 13px/1.5 "Helvetica Neue", sans-serif}',
+    expected: 'h1{font:italic small-caps normal 13px/1.5 Helvetica Neue,sans-serif}',
+}, {
     message: 'should convert the font shorthand property, unquoted',
     fixture: 'h1{font:italic Helvetica Neue,sans-serif,Arial}',
     expected: 'h1{font:italic Helvetica Neue,sans-serif}'
@@ -74,6 +78,10 @@ var tests = [{
     message: 'should not mangle legal unquoted values',
     fixture: 'h1{font-family:\\$42}',
     expected: 'h1{font-family:\\$42}'
+}, {
+    message: 'should not mangle font names',
+    fixture: 'h1{font-family:Glyphicons Halflings}',
+    expected: 'h1{font-family:Glyphicons Halflings}'
 }, {
     message: 'should pass through when it doesn\'t find a font property',
     fixture: 'h1{color:black;text-decoration:none}',

@@ -45,7 +45,7 @@ function optimiseFontFamily (decl) {
         ids.forEach(function (id) {
             if (~identifiers.indexOf(id)) {
                 shorthand.push(id);
-            } else if (/(\d*?\.?\d*?)?(%|em|ex|in|cm|mm|pt|pc|px)/.test(id)) {
+            } else if (/(\d*?\.?\d*?)?(%|em|ex|in|cm|mm|pt|pc|px)(\/[\d\.]*)?$/.test(id)) {
                 shorthand.push(id);
             } else {
                 unquoted += unquote(id) + ' ';
