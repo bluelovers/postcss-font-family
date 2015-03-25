@@ -25,7 +25,7 @@ function removeAfterKeyword () {
             return true;
         }
         return !hasKeyword;
-    }
+    };
 }
 
 function unquote (value) {
@@ -86,5 +86,5 @@ function optimiseFontFamily (decl) {
 module.exports = function () {
     return function (css) {
         css.eachDecl(/^font/, optimiseFontFamily);
-    }
-}
+    };
+};

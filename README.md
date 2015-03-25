@@ -1,4 +1,4 @@
-# postcss-font-family [![Build Status](https://travis-ci.org/ben-eb/postcss-font-family.svg?branch=master)][ci] [![NPM version](https://badge.fury.io/js/postcss-font-family.svg)][npm] [![Dependency Status](https://gemnasium.com/ben-eb/postcss-font-family.svg)][deps]
+# [postcss][postcss]-font-family [![Build Status](https://travis-ci.org/ben-eb/postcss-font-family.svg?branch=master)][ci] [![NPM version](https://badge.fury.io/js/postcss-font-family.svg)][npm] [![Dependency Status](https://gemnasium.com/ben-eb/postcss-font-family.svg)][deps]
 
 > Normalize font family declarations with PostCSS.
 
@@ -34,6 +34,7 @@ to cover it.
 
 MIT © Ben Briggs
 
-[ci]:   https://travis-ci.org/ben-eb/postcss-font-family
-[deps]: https://gemnasium.com/ben-eb/postcss-font-family
-[npm]:  http://badge.fury.io/js/postcss-font-family
+[ci]:      https://travis-ci.org/ben-eb/postcss-font-family
+[deps]:    https://gemnasium.com/ben-eb/postcss-font-family
+[npm]:     http://badge.fury.io/js/postcss-font-family
+[postcss]: https://github.com/postcss/postcss
