@@ -18,7 +18,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "postcss": "^4.0.6",
+    "postcss": "^4.1.2",
     "uniqs": "^2.0.0"
   },
   "devDependencies": {
@@ -30,7 +30,7 @@
   "homepage": "https://github.com/ben-eb/postcss-font-family",
   "author": {
     "name": "Ben Briggs",
-    "email": "therealbenbriggs@hotmail.com",
+    "email": "beneb.info@gmail.com",
     "url": "http://beneb.info"
   },
   "repository": {

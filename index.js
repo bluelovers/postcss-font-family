@@ -1,6 +1,7 @@
 'use strict';
 
-var list = require('postcss/lib/list');
+var postcss = require('postcss');
+var list = postcss.list;
 var shorter = require('./lib/shorter');
 var intersection = require('./lib/intersection');
 var uniqs = require('uniqs');
@@ -83,8 +84,8 @@ function optimiseFontFamily (decl) {
     decl.value = uniqs(values).join(',');
 }
 
-module.exports = function () {
+module.exports = postcss.plugin('postcss-font-family', function () {
     return function (css) {
         css.eachDecl(/^font/, optimiseFontFamily);
     };
-};
+});
