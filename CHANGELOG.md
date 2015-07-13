@@ -1,3 +1,8 @@
+# 1.1.1
+
+* Fixes an issue where 'Din' was being picked up by the logic as a numeric
+  value, causing the full font name to be incorrectly rearranged.
+
 # 1.1.0
 
 * Now uses the PostCSS `4.1` plugin API.

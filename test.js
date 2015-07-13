@@ -84,6 +84,10 @@ var tests = [{
     fixture: 'h1{font-family:Glyphicons Halflings}',
     expected: 'h1{font-family:Glyphicons Halflings}'
 }, {
+    message: 'should not mangle font names (2)',
+    fixture: 'h1{font-family:FF Din Pro,FF Din Pro Medium}',
+    expected: 'h1{font-family:FF Din Pro,FF Din Pro Medium}'
+}, {
     message: 'should pass through when it doesn\'t find a font property',
     fixture: 'h1{color:black;text-decoration:none}',
     expected: 'h1{color:black;text-decoration:none}'
