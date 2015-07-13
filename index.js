@@ -34,16 +34,14 @@ function unquote (value) {
 }
 
 function optimiseFontFamily (decl) {
-    var values = list.comma(decl.value);
-    values = values.map(function (value) {
+    var values = list.comma(decl.value).map(function (value) {
         // Don't escape identifiers starting with digits
         if (/^[0-9]/.test(value)) {
             return value;
         }
         var shorthand = [];
         var unquoted = '';
-        var ids = list.space(value);
-        ids.forEach(function (id) {
+        list.space(value).forEach(function (id) {
             if (~identifiers.indexOf(id)) {
                 shorthand.push(id);
             } else if (/(\d*?\.?\d)(%|em|ex|in|cm|mm|pt|pc|px)(\/[\d\.]*)?$/.test(id)) {
@@ -53,7 +51,7 @@ function optimiseFontFamily (decl) {
             }
         });
         // There's only one identifier...
-        if (!unquoted.length) {
+        if (!unquoted) {
             shorthand = [];
             unquoted = unquote(value);
         }

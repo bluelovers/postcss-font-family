@@ -2,7 +2,9 @@
 
 > Normalize font family declarations with PostCSS.
 
-Install via [npm](https://npmjs.org/package/postcss-font-family):
+## Install
+
+With [npm](https://npmjs.org/package/postcss-font-family) do:
 
 ```
 npm install postcss-font-family --save
@@ -10,20 +12,31 @@ npm install postcss-font-family --save
 
 ## Example
 
-```js
-var postcss = require('postcss')
-var normalize = require('postcss-font-family');
-
-var css = 'h1 { font-family: "Helvetica Neue", Arial, sans-serif, Helvetica }';
-console.log(postcss(normalize()).process(css).css);
-
-// => 'h1 { font-family: Helvetica Neue,Arial,sans-serif }'
-```
-
 This module will try to minimise the `font-family` and `font` shorthand
 properties; it can unquote font families where necessary, detect & remove
 duplicates, and cut short a declaration after it finds a keyword. For more
 examples, see the [tests](test.js).
+
+### Input
+
+```css
+h1 {
+    font-family: "Helvetica Neue", Arial, sans-serif, Helvetica;
+}
+```
+
+### Output
+
+```css
+h1 {
+    font-family: Helvetica Neue,Arial,sans-serif;
+}
+```
+
+## Usage
+
+See the [PostCSS documentation](https://github.com/postcss/postcss#usage) for
+examples for your environment.
 
 ## Contributing
 
@@ -32,7 +45,7 @@ to cover it.
 
 ## License
 
-MIT © Ben Briggs
+MIT © [Ben Briggs](http://beneb.info)
 
 [ci]:      https://travis-ci.org/ben-eb/postcss-font-family
 [deps]:    https://gemnasium.com/ben-eb/postcss-font-family

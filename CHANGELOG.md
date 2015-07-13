@@ -2,6 +2,7 @@
 
 * Fixes an issue where 'Din' was being picked up by the logic as a numeric
   value, causing the full font name to be incorrectly rearranged.
+* Plugin guidelines compatibility.
 
 # 1.1.0
 
