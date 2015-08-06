@@ -33,6 +33,36 @@ h1 {
 }
 ```
 
+## API
+
+### fontFamily([options])
+
+#### options
+
+##### removeAfterKeyword
+
+Type: `boolean`
+Default: `true`
+
+Pass `false` to disable the module from removing font families after it
+encounters a font keyword, for example `sans-serif`.
+
+##### removeDuplicates
+
+Type: `boolean`
+Default: `true`
+
+Pass `false` to disable the module from removing duplicated font families.
+
+##### removeQuotes
+
+Type: `boolean`
+Default: `true`
+
+Pass `false` to disable the module from removing quotes from font families.
+Note that oftentimes, this is a *safe optimisation* & is done safely. For more
+details, see [Mathias Bynens' article][mathias].
+
 ## Usage
 
 See the [PostCSS documentation](https://github.com/postcss/postcss#usage) for
@@ -51,3 +81,5 @@ MIT © [Ben Briggs](http://beneb.info)
 [deps]:    https://gemnasium.com/ben-eb/postcss-font-family
 [npm]:     http://badge.fury.io/js/postcss-font-family
 [postcss]: https://github.com/postcss/postcss
+
+[mathias]: https://mathiasbynens.be/notes/unquoted-font-family

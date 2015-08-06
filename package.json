@@ -18,6 +18,7 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "object-assign": "^3.0.0",
     "postcss": "^4.1.16",
     "uniqs": "^2.0.0"
   },

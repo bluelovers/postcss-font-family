@@ -6,6 +6,7 @@ var shorter = require('./lib/shorter');
 var intersection = require('./lib/intersection');
 var uniqs = require('uniqs');
 var identifiers = require('./lib/identifiers');
+var assign = require('object-assign');
 
 var keywords = [
     'sans-serif',
@@ -33,10 +34,10 @@ function unquote (value) {
     return value.replace(/^("|')(.*)\1$/, '$2').trim();
 }
 
-function optimiseFontFamily (decl) {
+function optimiseFontFamily (opts, decl) {
     var values = list.comma(decl.value).map(function (value) {
         // Don't escape identifiers starting with digits
-        if (/^[0-9]/.test(value)) {
+        if (/^[0-9]/.test(value) || !opts.removeQuotes) {
             return value;
         }
         var shorthand = [];
@@ -78,12 +79,24 @@ function optimiseFontFamily (decl) {
         }
 
         return shorter(escaped, value);
-    }).filter(removeAfterKeyword());
-    decl.value = uniqs(values).join(',');
+    });
+    if (opts.removeAfterKeyword) {
+        values = values.filter(removeAfterKeyword());
+    }
+    if (opts.removeDuplicates) {
+        values = uniqs(values);
+    }
+    decl.value = values.join(',');
 }
 
-module.exports = postcss.plugin('postcss-font-family', function () {
+module.exports = postcss.plugin('postcss-font-family', function (opts) {
+    opts = assign({
+        removeAfterKeyword: true,
+        removeDuplicates: true,
+        removeQuotes: true
+    }, opts);
+
     return function (css) {
-        css.eachDecl(/^font/, optimiseFontFamily);
+        css.eachDecl(/^font/, optimiseFontFamily.bind(this, opts));
     };
 });

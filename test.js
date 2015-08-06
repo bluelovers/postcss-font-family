@@ -1,3 +1,5 @@
+'use strict';
+
 var test = require('tape');
 var postcss = require('postcss');
 var plugin = require('./');
@@ -91,6 +93,21 @@ var tests = [{
     message: 'should pass through when it doesn\'t find a font property',
     fixture: 'h1{color:black;text-decoration:none}',
     expected: 'h1{color:black;text-decoration:none}'
+}, {
+    message: 'should not remove duplicates',
+    fixture: 'h1{font-family:Helvetica,Helvetica}',
+    expected: 'h1{font-family:Helvetica,Helvetica}',
+    options: {removeDuplicates: false}
+}, {
+    message: 'should not remove after keyword',
+    fixture: 'h1{font-family:serif,Times}',
+    expected: 'h1{font-family:serif,Times}',
+    options: {removeAfterKeyword: false}
+}, {
+    message: 'should not remove quotes',
+    fixture: 'h1{font-family:"Glyphicons Halflings", "Arial"}',
+    expected: 'h1{font-family:"Glyphicons Halflings","Arial"}',
+    options: {removeQuotes: false}
 }];
 
 function process (css, options) {
