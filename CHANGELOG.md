@@ -1,3 +1,7 @@
+# 1.2.0
+
+* Adds support for a configuration object; some optimisations can be disabled.
+
 # 1.1.1
 
 * Fixes an issue where 'Din' was being picked up by the logic as a numeric
