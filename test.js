@@ -90,6 +90,10 @@ var tests = [{
     fixture: 'h1{font-family:FF Din Pro,FF Din Pro Medium}',
     expected: 'h1{font-family:FF Din Pro,FF Din Pro Medium}'
 }, {
+    message: 'should handle rem values',
+    fixture: 'h1{font:bold 2.2rem/.9 "Open Sans Condensed", sans-serif}',
+    expected: 'h1{font:bold 2.2rem/.9 Open Sans Condensed,sans-serif}'
+}, {
     message: 'should pass through when it doesn\'t find a font property',
     fixture: 'h1{color:black;text-decoration:none}',
     expected: 'h1{color:black;text-decoration:none}'
