@@ -1,3 +1,7 @@
+# 2.0.0
+
+* Upgraded to PostCSS 5.
+
 # 1.2.1
 
 * Fixes an issue where rem measurements were being quoted alongside the font

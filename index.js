@@ -86,7 +86,7 @@ function optimiseFontFamily (opts, decl) {
     if (opts.removeDuplicates) {
         values = uniqs(values);
     }
-    decl.value = values.join(',');
+    decl.value = values.join();
 }
 
 module.exports = postcss.plugin('postcss-font-family', function (opts) {
@@ -97,6 +97,6 @@ module.exports = postcss.plugin('postcss-font-family', function (opts) {
     }, opts);
 
     return function (css) {
-        css.eachDecl(/^font/, optimiseFontFamily.bind(this, opts));
+        css.walkDecls(/^font/, optimiseFontFamily.bind(this, opts));
     };
 });
