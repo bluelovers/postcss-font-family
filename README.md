@@ -1,4 +1,12 @@
-# [postcss][postcss]-font-family [![Build Status](https://travis-ci.org/ben-eb/postcss-font-family.svg?branch=master)][ci] [![NPM version](https://badge.fury.io/js/postcss-font-family.svg)][npm] [![Dependency Status](https://gemnasium.com/ben-eb/postcss-font-family.svg)][deps]
+# Deprecation Notice
+
+:warning: This project is now *deprecated*; use [postcss-minify-font-values]
+instead.
+
+[postcss-minify-font-values]: https://github.com/TrySound/postcss-minify-font-values
+
+
+# [postcss][postcss]-font-family
 
 > Normalize font family declarations with PostCSS.
 
@@ -77,9 +85,6 @@ to cover it.
 
 MIT © [Ben Briggs](http://beneb.info)
 
-[ci]:      https://travis-ci.org/ben-eb/postcss-font-family
-[deps]:    https://gemnasium.com/ben-eb/postcss-font-family
-[npm]:     http://badge.fury.io/js/postcss-font-family
 [postcss]: https://github.com/postcss/postcss
 
 [mathias]: https://mathiasbynens.be/notes/unquoted-font-family
